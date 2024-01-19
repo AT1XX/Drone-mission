@@ -38,7 +38,7 @@ in with the Frontend (3) application.
 Key role:
 - Collaborated on a 12-member Scrum team specializing in frontend, backend, simulation, and firmware development.
 - Led implementation of drone controls and a custom JavaFX Web engine, showcasing expertise in backend drone development.
-- Key contributor in merging code across multiple teams, serving as the main point of contact for seamless project cohesion
+- Key contributor in merging code across multiple teams, serving as the main point of contact for seamless project cohesion.
 
 
 https://github.com/AT1XX/Drone-mission/assets/119278828/d648dcd2-016a-4bd8-9ea0-500aa4ee06a6
