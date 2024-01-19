@@ -12,12 +12,13 @@ public class Drone {
   private int zPos = 0; // up and down
 
   CommunicationHandler communicationHandler = CommunicationHandler.getInstance();
+  // private DroneContainer droneC = new DroneContainer();
+  // droneC.setMotorStart();
   // BackendClient back = new BackendClient();
   // back.runBackend();
-	// 	FrontendClient front = new FrontendClient();
-	// 	FirmwareClient firm = new FirmwareClient();
-	// 	SimulationClient simulation = new SimulationClient();
-    
+  // FrontendClient front = new FrontendClient();
+  // FirmwareClient firm = new FirmwareClient();
+  // SimulationClient simulation = new SimulationClient();
 
   private Motor frontLeft = new Motor();
   private Motor frontRight = new Motor();
@@ -25,20 +26,20 @@ public class Drone {
   private Motor backRight = new Motor();
 
   // Forward, Backward, Up, Down, Right, Left
-  //private String currState = "";
+  // private String currState = "";
 
-  private String[] ledColors = {"red", "yellow", "green"};
+  private String[] ledColors = { "red", "yellow", "green" };
   private String ledColor = ledColors[0];
-  
+
   public void printMotorVals() {
     System.out.println(frontLeft.PWM + "," + frontRight.PWM + "," + backLeft.PWM + "," + backRight.PWM);
-   //System.out.println(frontRight.PWM);
-    //System.out.println(backLeft.PWM);
-    //System.out.println(backRight.PWM);
+    // System.out.println(frontRight.PWM);
+    // System.out.println(backLeft.PWM);
+    // System.out.println(backRight.PWM);
   }
 
   // public void setCurrState(String currState) {
-  //   this.currState = currState;
+  // this.currState = currState;
   // }
 
   public void updateXPos(int increaseAmount) {
@@ -56,7 +57,7 @@ public class Drone {
     System.out.println("zPos updated: " + zPos);
   }
 
-  public void setLedColor(int led){
+  public void setLedColor(int led) {
     this.ledColor = ledColors[led];
     System.out.println("led changed to: " + ledColor);
   }
@@ -66,13 +67,13 @@ public class Drone {
     this.frontRight.setSpeed(frontRightVal);
     this.backLeft.setSpeed(backLeftVal);
     this.backRight.setSpeed(backRightVal);
-    String m1 =String.valueOf(frontLeftVal);
-    String m2 =String.valueOf(frontRightVal);
-    String m3 =String.valueOf(backRightVal);
-    String m4 =String.valueOf(backLeftVal);
-    String sDrone = "simulation_Drone_" + m1 + "_"+ m2 + "_"+ m3 + "_"+ m4 + "_"+ "255_255_255";
-    String fDrone = "firmware_Drone_" + m1 + "_"+ m2 + "_"+ m3 + "_"+ m4 + "_"+ "255_255_255";
-    System.out.println(sDrone);
+    String m1 = String.valueOf(frontLeftVal);
+    String m2 = String.valueOf(frontRightVal);
+    String m3 = String.valueOf(backRightVal);
+    String m4 = String.valueOf(backLeftVal);
+    String sDrone = "simulation_Drone_" + m1 + "_" + m2 + "_" + m3 + "_" + m4 + "_" + "225_225_225";
+    String fDrone = "firmware_Drone_" + m1 + "_" + m2 + "_" + m3 + "_" + m4 + "_" + "225_225_225";
+    // System.out.println(sDrone);
     communicationHandler.sendToClients(sDrone);
     communicationHandler.sendToClients(fDrone);
   }
@@ -81,22 +82,27 @@ public class Drone {
     this.setMotors(0, 0, 0, 0);
     this.updateZPos(1);
   }
+
   public void goDown() {
     this.setMotors(0, 0, 0, 0);
     this.updateZPos(-1);
   }
+
   public void goForward() {
     this.setMotors(0, 0, 0, 0);
     this.updateYPos(1);
   }
+
   public void goBackwards() {
     this.setMotors(0, 0, 0, 0);
     this.updateYPos(-1);
   }
+
   public void goRight() {
     this.setMotors(0, 0, 0, 0);
     this.updateXPos(1);
   }
+
   public void goLeft() {
     this.setMotors(0, 0, 0, 0);
     this.updateXPos(-1);
