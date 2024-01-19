@@ -32,4 +32,5 @@ tasks (such as remapping controls). This application will be running the Backend
 ## Simulation Software
 The Simulation will contain a digital render of a drone and a basic environment. The drone
 model will respond to user input in real-time, providing the operator with visual feedback.
-Depending on development, the simul
+Depending on development, the simulation will either be a standalone application or will be tied
+in with the Frontend (3) application
