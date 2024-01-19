@@ -34,3 +34,7 @@ The Simulation will contain a digital render of a drone and a basic environment.
 model will respond to user input in real-time, providing the operator with visual feedback.
 Depending on development, the simulation will either be a standalone application or will be tied
 in with the Frontend (3) application.
+
+
+https://github.com/AT1XX/Drone-mission/assets/119278828/d648dcd2-016a-4bd8-9ea0-500aa4ee06a6
+
